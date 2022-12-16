@@ -11,60 +11,57 @@
 
   <main>
     <section class="location">
-      <div class="city">{{data.city_name}}</div>
-      <div class="date">{{data.datetime}}</div>
+      <div class="city">{{data.name}}</div>
+      <div class="date"></div>
     </section>
 
     <div class="current">
-      <div class="temp">15<span>°C</span></div>
-      <div class="weather">Sunny</div>
-      <div class="hi-low">13°C / 16°C</div>
+      <div class="temp">{{data.main.feels_like}}<span>°C</span></div>
+      <div class="weather">{{data.weather[0].main}}</div>
+      <div class="hi-low">{{data.main.temp_max}}°C / {{data.main.temp_min}}°C</div>
     </div>
   </main>
 </div>
 <!-- {
-  "app_temp": -49.6,
-  "aqi": 0,
-  "city_name": "Port-aux-Français",
-  "clouds": 5,
-  "country_code": "TF",
-  "datetime": "2022-12-15:18",
-  "dewpt": -39.6,
-  "dhi": 63.56,
-  "dni": 668.17,
-  "elev_angle": 14.72,
-  "ghi": 226.58,
-  "gust": 2.2285156,
-  "h_angle": -72,
-  "lat": -78.5,
-  "lon": 38.5,
-  "ob_time": "2022-12-15 18:07",
-  "pod": "n",
-  "precip": 0,
-  "pres": 618,
-  "rh": 96,
-  "slp": 1019,
-  "snow": 0,
-  "solar_rad": 226.6,
-  "sources": [
-      "analysis"
-  ],
-  "state_code": "03",
-  "station": "G0697",
-  "sunrise": "00:00",
-  "sunset": "00:00",
-  "temp": -35.7,
-  "timezone": "Africa/Johannesburg",
-  "ts": 1671127657,
-  "uv": 1.9167814,
-  "vis": 16,
-  "weather": {
-      "code": 800,
-      "icon": "c01n",
-      "description": "Clear sky"
+  "coord": {
+      "lon": 31.2497,
+      "lat": 30.0626
   },
-  "wind_cdir": "NW",
-  "wind_cdir_full": "northwest",
-  "wind_dir": 323,
-  "wind_spd": 2.2419922
+  "weather": [
+      {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01n"
+      }
+  ],
+  "base": "stations",
+  "main": {
+      "temp": 66.96,
+      "feels_like": 66.31,
+      "temp_min": 66.42,
+      "temp_max": 66.96,
+      "pressure": 1020,
+      "humidity": 63
+  },
+  "visibility": 6000,
+  "wind": {
+      "speed": 4.61,
+      "deg": 90
+  },
+  "clouds": {
+      "all": 0
+  },
+  "dt": 1671132105,
+  "sys": {
+      "type": 1,
+      "id": 2514,
+      "country": "EG",
+      "sunrise": 1671079405,
+      "sunset": 1671116206
+  },
+  "timezone": 7200,
+  "id": 360630,
+  "name": "Cairo",
+  "cod": 200
 } -->

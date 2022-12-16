@@ -9,16 +9,22 @@ import { WeatherDataService } from './services/weather-data.service';
 })
 export class AppComponent {
   title = 'weather-app';
-  location:string ="cairo"
+  location:string ="london"
   data:any={}
   constructor(private weatherData:WeatherDataService){}
   ngOnInit(){
-    // this.weatherData.getWeatherDate("cairo")
-    this.weatherData.getWeatherDate("cairo").subscribe((val)=> {
-      this.data = val.data[0]
-      console.log(this.data)
+    this.weatherData.getWeatherDate(this.location).subscribe((val)=> {
+      this.data = val
     }
     )
+  }
+  
+  ngOnChanges(){
+    this.weatherData.getWeatherDate(this.location).subscribe((val)=> {
+      this.data = val
+    }
+    )
+
   }
   
 

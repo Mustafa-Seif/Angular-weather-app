@@ -6,16 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WeatherDataService {
   constructor(private http: HttpClient) {}
-
   getWeatherDate(location:string) {
     return this.http.get<any>(
-      `https://weatherbit-v1-mashape.p.rapidapi.com/current`,
-    {
-      params: {lon: '39.5', lat: '-78.5', units: 'metric'},
-      headers: {
-        'X-RapidAPI-Key': '679c40982fmsheadd8c7b09f0c6fp175affjsn2291559f1907',
-        'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
-      }
-    });
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=15e4e80a13e92527ceb4365f589dd854&units=metric`,
+    );
   }
 }
