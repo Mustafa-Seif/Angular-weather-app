@@ -1,17 +1,23 @@
 <div class="app-wrap">
+  <img src="../assets/1 (1).jpg" alt="img" *ngIf="data.main.feels_like < 15" class="background">
+  <img src="../assets/1 (2).jpg" alt="img" *ngIf="data.main.feels_like > 15" class="background">
   <header>
+    <form #form="ngForm" (submit)="onSubmit()">
     <input
       type="text"
       autocomplete="off"
       [(ngModel)]="location"
       class="search-box"
       placeholder="Search for a city"
+      name="city"
     />
+  </form>
   </header>
 
   <main>
+    
     <section class="location">
-      <div class="city">{{data.name}}</div>
+      <div class="city ">{{data.name}}</div>
       <div class="date"></div>
     </section>
 
@@ -22,46 +28,3 @@
     </div>
   </main>
 </div>
-<!-- {
-  "coord": {
-      "lon": 31.2497,
-      "lat": 30.0626
-  },
-  "weather": [
-      {
-          "id": 800,
-          "main": "Clear",
-          "description": "clear sky",
-          "icon": "01n"
-      }
-  ],
-  "base": "stations",
-  "main": {
-      "temp": 66.96,
-      "feels_like": 66.31,
-      "temp_min": 66.42,
-      "temp_max": 66.96,
-      "pressure": 1020,
-      "humidity": 63
-  },
-  "visibility": 6000,
-  "wind": {
-      "speed": 4.61,
-      "deg": 90
-  },
-  "clouds": {
-      "all": 0
-  },
-  "dt": 1671132105,
-  "sys": {
-      "type": 1,
-      "id": 2514,
-      "country": "EG",
-      "sunrise": 1671079405,
-      "sunset": 1671116206
-  },
-  "timezone": 7200,
-  "id": 360630,
-  "name": "Cairo",
-  "cod": 200
-} -->
